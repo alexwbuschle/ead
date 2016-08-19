@@ -18,7 +18,9 @@ server {
 
   root <%= @application[:absolute_document_root] %>;
 
-  client_max_body_size 31M;
+  // aaaaa <%= node[:nginx] %>
+
+  client_max_body_size 33M;
 
   location / {
     try_files $uri/index.html $uri/index.htm @unicorn;
@@ -29,7 +31,7 @@ server {
     proxy_set_header Host $http_host;
     proxy_redirect off;
 
-    client_max_body_size 31M;
+    client_max_body_size 33M;
 
   <% if node[:nginx] && node[:nginx][:proxy_read_timeout] -%>
     proxy_read_timeout <%= node[:nginx][:proxy_read_timeout] %>;
