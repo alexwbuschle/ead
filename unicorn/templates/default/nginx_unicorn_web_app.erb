@@ -18,6 +18,8 @@ server {
 
   root <%= @application[:absolute_document_root] %>;
 
+  # aaaaa <%= node[:nginx][:client_max_body_size] %>
+
   client_max_body_size 33M;
 
   location / {
