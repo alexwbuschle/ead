@@ -166,7 +166,7 @@ end
 ```ruby
 elasticsearch_install 'my_es_installation' do
   type :tarball # type of install
-  version '1.7.2'
+  version '2.2.0'
   action :install # could be :remove as well
 end
 ```
